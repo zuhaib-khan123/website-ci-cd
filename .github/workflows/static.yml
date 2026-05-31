@@ -31,19 +31,19 @@ jobs:
       - name: Create environment
         run: |
           mkdir site
-          if["${{github.ref_name}}" = "dev"];then
+          if[ "${{ github.ref_name}}" = "dev" ]; then
             echo "HI DEV">site/index.html
-          elif["${{github.ref_name}}" = "test"];then
+          elif[ "${{ github.ref_name }} " = "test" ]; then
             echo "HI TEST">site/index.html
-          elif["${{github.ref_name}}" = "prod"];then
+          elif[ "${{ github.ref_name }} " = "prod" ]; then
             echo "HI PROD">site/index.html
           else
             echo "HI main">site/index.html
           fi
       - name: Configure or prepare environment
-        uses: actions/configure@v4
+        uses: actions/configure-pages@v5
 
-      - uses: actions/upload-pages-artiafct@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
           path: 'site'
