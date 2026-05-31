@@ -31,11 +31,11 @@ jobs:
       - name: Create environment
         run: |
           mkdir site
-          if[ "${{ github.ref_name}}" = "dev" ]; then
+          if [ "${{ github.ref_name}}" = "dev" ]; then
             echo "HI DEV">site/index.html
-          elif[ "${{ github.ref_name }} " = "test" ]; then
+          elif [ "${{ github.ref_name }} " = "test" ]; then
             echo "HI TEST">site/index.html
-          elif[ "${{ github.ref_name }} " = "prod" ]; then
+          elif [ "${{ github.ref_name }} " = "prod" ]; then
             echo "HI PROD">site/index.html
           else
             echo "HI main">site/index.html
