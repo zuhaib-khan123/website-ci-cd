@@ -41,7 +41,7 @@ jobs:
             echo "HI main">site/index.html
           fi
       - name: Configure or prepare environment
-        uses: actions/configure@v5
+        uses: actions/configure@v4
 
       - uses: actions/upload-pages-artiafct@v3
         with:
